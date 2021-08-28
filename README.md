@@ -11,12 +11,9 @@
 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/joseph_chigiz.svg?style=social&label=Follow%20%40joseph_chigiz)](https://twitter.com/joseph_chigiz)
 
 
-<!-- ABOUT THE PROJECT -->
+<!-- Screeshots and About -->
 ## About The Project
-<img src = "screenshot1.png" width ="300" /> <img src = "screenshot2.png" width ="300" />
-
-<!-- GETTING STARTED -->
-## Getting Started
+<img src = "screenshot1.png" width ="500" /> <img src = "screenshot2.png" width ="500" />
 
 
 <!-- CONTACT -->
