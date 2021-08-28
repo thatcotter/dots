@@ -13,8 +13,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-##![Screenshot](screenshot1.png)
-##![Screenshot](screenshot2.png)
 <img src = "screenshot1.png" width ="200" /> <img src = "screenshots2.png" width ="200" />
 
 <!-- GETTING STARTED -->
