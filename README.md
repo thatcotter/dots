@@ -13,7 +13,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<img src = "screenshot1.png" width ="200" /> <img src = "screenshots2.png" width ="200" />
+<img src = "screenshot1.png" width ="300" /> <img src = "screenshot2.png" width ="300" />
 
 <!-- GETTING STARTED -->
 ## Getting Started
