@@ -12,7 +12,7 @@
 
 
 ## Screenshots and About
-<img src = "screenshot1.png" width ="650" /> <img src = "screenshot2.png" width ="6500" />
+<img src = "screenshot1.png" width ="650" /> <img src = "screenshot2.png" width ="650" />
 
 
 <!-- CONTACT -->
