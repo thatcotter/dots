@@ -26,7 +26,8 @@
 <!-- CONTACT -->
 ## Contact
 
-Twitter - [@joseph_chigiz](https://twitter.com/joseph_chigiz) - josephochegogames@gmail.com
+Twitter - [@joseph_chigiz](https://twitter.com/joseph_chigiz) <br>
+Email - [Joseph Ochego](josephochegogames@gmail.com) <br>
 Instagram - [@joe__graphic](https://www.instagram.com/joe__graphic/) 
 
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
