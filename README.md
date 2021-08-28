@@ -18,7 +18,7 @@
 -->
 
 [![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/joseph-ochego-7ab83b1b2/]
-[![Twitter]][https://twitter.com/joseph_chigiz]
+[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/joseph_chigiz.svg?style=social&label=Follow%20%40joseph_chigiz)](https://twitter.com/joseph_chigiz)
 
 
 
