@@ -17,9 +17,12 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/joseph-ochego-7ab83b1b2/)
 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/joseph_chigiz.svg?style=social&label=Follow%20%40joseph_chigiz)](https://twitter.com/joseph_chigiz)
-[![Instagram][https://img.shields.io/instagram/url/https/instagram.com/joe__graphic.svg?style=instagram&logoColor=white]](https://www.instagram.com/joe__graphic/)
+[![Instagram]](https://www.instagram.com/joe__graphic/)
 
 
 
