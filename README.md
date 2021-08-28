@@ -19,6 +19,7 @@
 
 [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/joseph-ochego-7ab83b1b2/)
 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/joseph_chigiz.svg?style=social&label=Follow%20%40joseph_chigiz)](https://twitter.com/joseph_chigiz)
+[![Instagram][https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white]]
 
 
 
