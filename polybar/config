@@ -1,0 +1,656 @@
+;==========================================================
+;
+; THIS IS AN EXAMPLE CONFIGURATION FILE!
+; IT IS NOT SUPPOSED TO WORK OUT OF THE BOX SINCE IS CONTAINS
+; SETTINGS THAT ARE SPECIFIC TO THE MACHINE WHICH WAS USED
+; TO GENERATE IT.
+; Please refer to the web documentation hosted at:
+; https://github.com/polybar/polybar#configuration
+; and
+; https://github.com/polybar/polybar/wiki/Configuration
+; if you want to automatically generate one for you.
+;
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+
+;background = #D9131B26
+background = #ff223034
+background-alt = #444
+foreground = #fff
+foreground-alt = #fff
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+enable-ipc = true
+
+################################################################################
+
+[bar/example]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 23
+;offset-x = 0%
+;offset-y = 1%
+radius = 0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 2
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 0
+module-margin-right = 2
+
+font-0 = fixed:pixelsize=9;2
+font-1 = Font Awesome 5 Free:style=Solid:size=9;2
+font-2 = Font Awesome 5 Free:style=Regular:size=9;2
+font-3 = Font Awesome 5 Brands:style=Regular:size=9;2
+
+;modules-left = player-moc spotify spotify-prev spotify-play-pause spotify-next
+modules-left = bspwm date
+modules-center =  player-moc
+;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu backlight-acpi
+modules-right = memory cpu pulseaudio wlan battery0 bluetooth powermenu
+
+separator = "I "
+
+;tray-position = right
+;tray-detached = false
+;tray-maxsize = 20
+;tray-padding = 2
+;tray-offset-x = 0
+;tray-offset-y = 0
+;tray-scale = 1.0
+;tray-background = #FF131B26
+;tray-background = #ff000000
+;tray-background = ${colors.background}
+
+#i3: Make the bar appear below windows
+wm-restack = bspwm
+;wm-restack = i3
+;override-redirect = true
+
+; Enable support for inter-process messaging
+; See the Messaging wiki page for more details.
+enable-ipc = true
+
+
+; Fallback click handlers that will be called if
+; there's no matching module handler found.
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+click-left =
+click-middle =
+click-right =
+
+; Requires polybar to be built with xcursor support (xcb-util-cursor)
+; Possible values are:
+; - default   : The default pointer as before, can also be an empty string (default)
+; - pointer   : Typically in the form of a hand
+; - ns-resize : Up and down arrows, can be used to indicate scrolling
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+######################################################################################
+#######################      MODULES    #########################
+
+[module/xwindow]
+type = internal/xwindow
+label = " %title:0:18:...%"
+label-foreground = #ffa0d3ec
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+;format-prefix-underline = ${colors.secondary}
+
+label-layout = %layout%
+;label-layout-underline = ${colors.secondary}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+;label-indicator-underline = ${colors.secondary}
+
+###############################################################
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted =  %free%
+label-mounted-foreground = #ff55ffff
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = #ff55ffff
+
+########################### MODULE BSPWM  ######################
+
+[module/bspwm]
+type = internal/bspwm
+
+pin-workspaces = true
+inline-mode = true
+enable-click = true
+enable-scroll = true
+reverse-scroll = false
+
+format = <label-state>
+
+;ws-icon-0 = I;
+;ws-icon-1 = II;
+;ws-icon-2 = III;
+;ws-icon-3 = IV;
+;ws-icon-4 = V;
+;ws-icon-5 = VI;
+;ws-icon-6 = VII;
+;ws-icon-7 = VIII;
+;ws-icon-8 = IX;
+;ws-icon-9 = X;
+
+ws-icon-0 = I; www
+ws-icon-1 = II;dev
+ws-icon-2 = III;fil
+ws-icon-3 = IV;vlc
+ws-icon-4 = V;zoo
+ws-icon-5 = VI;tel
+ws-icon-6 = VII;not
+ws-icon-7 = VIII;doc
+ws-icon-8 = IX;mai
+ws-icon-9 = X;spo
+
+
+label-focused = %icon%
+;label-focused-underline = #ff00ffff
+;label-focused-background = #ff2b4c55
+label-focused-padding = 1
+;label-occupied-foreground =#ffff5500
+
+label-occupied = %icon%
+;label-occupied-foreground =#ff7ea6ba
+label-occupied-foreground = #ff435e66
+label-occupied-padding = 1
+
+
+label-empty = %icon%
+label-empty-foreground = #ff435e66
+label-empty-padding = 1
+
+label-urgent = %icon%
+label-urgent-foreground = #88C0D0
+label-urgent-padding = 1
+
+; Separator in between workspaces
+;label-separator = I
+
+########################## bspwm end ########################
+
+######################### MY MODS ###############################
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; This will split the workspace name on ':'
+; Default: false
+strip-wsnumbers = false
+
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
+
+ws-icon-0 = I;
+ws-icon-1 = II;
+ws-icon-2 = III;
+ws-icon-3 = IV;
+ws-icon-4 = V;
+ws-icon-5 = VI;
+ws-icon-6 = VII;
+ws-icon-7 = VIII;
+ws-icon-8 = IX;
+ws-icon-9 = X;
+
+
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-foreground = #000000
+;label-mode-background = ${colors.primary}
+label-mode-background = #FFBB00
+
+; focused = Active workspace on focused monitor
+;label-focused = %index%
+label-focused = %icon%
+label-focused-background = #D9131B26
+;label-focused-underline= ${colors.primary}
+label-focused-underline = #ff42deef
+label-focused-foreground = ${colors.foreground}
+;label-focused-foreground = #ffaaffff
+label-focused-padding = 2
+
+;unfocused = Inactive workspace on any monitor
+;label-unfocused = %name%
+label-unfocused = %icon%
+label-unfocused-padding = 2
+label-unfocused-background = ${colors.background}
+label-unfocused-foreground = ${colors.foreground}
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+;label-urgent = %index%
+label-urgent = %icon%
+;label-urgent-background = ${colors.alert}
+label-urgent-background = #ff466a6a
+;label-urgent-foreground = #ff000000
+label-urgent-padding = 2
+
+label-empty = =%icon%
+label-empty-background = ${colors.background}
+label-empty-foreground = ${colors.foreground}
+
+; Separator in between workspaces
+;label-separator = |
+
+##########################################################################
+[module/xbacklight]
+type = internal/xbacklight
+;card = intel_backlight
+
+format = <ramp>
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+format-padding = 0
+
+; Available tokens:
+;   %percentage% (default)
+label = %percentage%%
+
+; Only applies if <ramp> is used
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
+ramp-6 = 
+ramp-7 = 
+ramp-8 = 
+ramp-9 = 
+ramp-font = 2
+ramp-foreground = #ffaaffff
+
+
+################################################################
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+;output = HDMI-1
+;enable-scroll = true
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix-foreground = #7D49B6
+;format-prefix-underline = #7D49B6
+;format-underline = #7D49B6
+
+###################################################################
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "  "
+;format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = #ff7aabb8
+;format-underline = #f90000
+label = %percentage:2%%
+label-foreground = #ff7aabb8
+###############################################################
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "   "
+;format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = #ff7aabb8
+;format-underline = #ff36b7c5
+label = %percentage_used%%
+label-foreground = #ff7aabb8
+#######################################################################################
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+
+format-connected = <ramp-signal>
+;<label-connected>
+;format-connected-underline = #ff36b7c5
+label-connected = %essid%
+label-connected-foreground = #ff7aabb8
+click-left = gnome-control-center network &
+click-right =
+click-middle =
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline =
+;label-disconnected = %ifname% disconnected
+;label-connected-foreground = #ff00aa00
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 =
+ramp-signal-4 = 
+ramp-signal-foreground = #ff7aabb8
+#################################################################
+
+[module/eth]
+type = internal/network
+interface = enp0s25
+interval = 3.0
+
+;format-connected-underline = #ff36b7c5
+format-connected-prefix = "  "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+###################################################################
+
+[module/date]
+type = internal/date
+interval = 5
+
+date-alt = "   %a, %d %b %Y"
+;date = " %Y-%m-%d"
+date =
+
+time = " %I:%M %p"
+;time-alt = %H:%M
+
+;format-prefix = 
+;format-prefix = "  "
+format-prefix-foreground = #ff7aabb8
+;format-underline = #ff36b7c5
+
+label = "  %date% %time%"
+;label = " %time%"
+label-foreground = #ff7aabb8
+#########################################################################
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume>
+;format-volume = <label-volume>
+label-volume ="   %percentage%%"
+;label-volume-foreground = #ffffff
+label-volume-foreground = #ff7aabb8
+
+ramp-volume-0 = " "
+ramp-volume-1 = " "
+ramp-volume-2 = " "
+ramp-volume-3 = " "
+ramp-volume-foreground = ${colors.foreground-alt}
+ramp-volume-0-foreground = #ffff5a0e
+
+label-muted = "  "
+label-muted-foreground = #ffff5a0e
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #2E6A98
+;bar-volume-foreground-1 = #55aa55
+;bar-volume-foreground-2 = #55aa55
+;bar-volume-foreground-3 = #55aa55
+;bar-volume-foreground-4 = #55aa55
+;bar-volume-foreground-5 = #f5a70a
+;bar-volume-foreground-6 = #ff5555
+bar-volume-indicator-foreground = #2E6A98
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+################################################################################
+[module/spotify]
+type = custom/script
+tail = true
+; prefix symbol is shown before the text
+format-prefix = "    "
+;format-suffix = "..."
+format-suffix-foreground = #ffb6d5ad
+format-prefix-foreground = #ff1db954
+format = <label>
+format-foreground = #ffb6d5ad
+exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
+
+click-left = playerctl -p spotify play-pause &
+click-right = playerctl -p spotify next &
+click-middle = playerctl -p spotify previous &
+
+[module/spotify-prev]
+type = custom/script
+exec = echo "  "
+format = <label>
+click-left = playerctl -p spotify previous
+
+[module/spotify-play-pause]
+type = custom/ipc
+hook-0 = echo "    "
+hook-1 = echo "    "
+initial = 1
+click-left = playerctl -p spotify play-pause
+
+[module/spotify-next]
+type = custom/script
+exec = echo "  "
+format = <label>
+click-left = playerctl -p spotify next
+
+###################################################################
+[module/bluetooth]
+type = custom/script
+exec = ~/.config/polybar/scripts/polybar-bluetooth-master/bluetooth.sh
+interval = 2
+click-left = exec blueberry
+click-right = ~/.config/polybar/scripts/polybar-bluetooth-master/toggle_bluetooth.sh
+format-padding = 1
+format-background = ${colors.background}
+format-foreground = #ffa4e6f8
+
+########################################################################
+[module/player-moc]
+interval = 0.5
+type = custom/script
+exec = ~/.config/polybar/scripts/player-moc.sh
+label = %output:0:20:...%
+format-prefix = "   "
+format-prefix-foreground = #ff7aabb8
+label-close = "MOC   off"
+label-foreground = #ff52737d
+;format-underline = #ff046062
+format-foreground = ${colors.foreground}
+format-background = #D9ff101720
+
+click-left = mocp -G &
+click-right = mocp -f &
+click-middle = mocp -r &
+
+
+########################################################################
+
+[module/battery0]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 100
+
+format-charging =  <label-charging>
+;format-charging-underline = #ff36b7c5
+format-charging-foreground = #ff7aabb8
+format-discharging = <ramp-capacity> <label-discharging>
+;format-discharging-underline = #ff36b7c5
+label-discharging-foreground = #ff51717a
+format-full-prefix = "  "
+format-full-prefix-foreground = #ff7aabb8
+;format-full-underline = #ffffff
+
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
+;ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = #ff7aabb8
+
+
+[module/battery1]
+type = internal/battery
+battery = BAT1
+adapter = AC
+full-at = 100
+
+time-format = %H:%M
+label-charging =   %percentage%%
+label-discharging = %percentage%%
+
+format-charging = <label-charging>
+;format-charging-underline = #ff36b7c5
+
+format-discharging = <ramp-capacity> <label-discharging>
+;format-discharging-underline = #ff36b7c5
+
+format-full-prefix = "  "
+format-full-prefix-foreground = #ff00ff85
+;format-full-underline = #ffffff
+
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+
+
+##########################################
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+;format-underline = #ff36b7c5
+format-warn = <ramp> <label-warn>
+;format-warn-underline = #ffff073c
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+label-foreground = #ffaaff7f
+
+ramp-0 = " "
+ramp-1 = " "
+ramp-2 = " "
+;ramp-foreground = ${colors.foreground-alt}
+ramp-foreground = #ffaaff7f
+###################################################
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = "  "
+label-open-foreground = ${colors.secondary}
+label-close =  cancel
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = reboot
+
+menu-2-0 = power off
+menu-2-0-exec = poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+#######################################################################
+
+
+############################################################################
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosinite = 750
+
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-framerate = 750
