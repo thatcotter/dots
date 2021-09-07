@@ -4,8 +4,11 @@
 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/joseph_chigiz.svg?style=social&label=Follow%20%40joseph_chigiz)](https://twitter.com/joseph_chigiz)
 
 
-## Screenshots and About
+## Screenshots For Standard
 <img src = "screenshots/screenshot1.png" width ="300" /> <img src = "screenshots/screenshot2.png" width ="300" />
+
+## Screenshots For Nordic
+<img src = "screenshots/screenshot3.png" width ="300" /> <img src = "screenshots/screenshot4.png" width ="300" />
 
 
 <!-- CONTACT -->
