@@ -18,7 +18,7 @@ Twitter - [@joseph_chigiz](https://twitter.com/joseph_chigiz) <br>
 Email - [Joseph Ochego](mailto:josephochegogames@gmail.com) <br>
 Instagram - [@joe__graphic](https://www.instagram.com/joe__graphic/) 
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [My Dots](https://github.com/josephchigiz/dots)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
